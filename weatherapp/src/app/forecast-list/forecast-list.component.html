@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Forecast Records</div>
+  <div class="panel-body">
+    <form class="navbar-form navbar-left"  data-toggle="validator" role="form">
+      <div class="form-group">
+        <input type="text" id="name"  name="txtSearch" [(ngModel)]="textSearch"   class="form-control" placeholder="Search" required="true">
+      </div>
+      <button type="submit" (click)="search()" class="btn btn-default">Search</button>
+    </form>
+  </div>
+
+  <!-- Table -->
+  <table class="table" *ngFor="let result of results">
+      <thead>
+          <tr>
+            <th>Temperature</th>
+            <th>Real Address</th>
+            <th>Summary</th>
+          </tr>         
+      </thead>
+      <tbody>
+          <tr>
+            <td>{{ result.info.temperature }}</td>
+            <td>{{ result.realAddress }}</td>
+            <td>{{ result.info.summary }}</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
