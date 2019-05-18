@@ -27,28 +27,26 @@ describe('AppComponent', () => {
 
   }));
 
-  it('should show error message(address)',fakeAsync( () => {
+  it('should show error message(address)ddd',fakeAsync( () => {
     const fixture = TestBed.createComponent(ForecastSearchComponent);
     const app = fixture.debugElement.componentInstance;
-
+it('should show error message(address)ddd',fakeAsync( () => {
+  
     let service = fixture.debugElement.injector.get(AddressService);
     let spy = spyOn(service, 'request')
+  it('should show error message(address)ddd',fakeAsync( () => {
           .and.returnValue(Promise.reject('aa'));
 
-    //  app.search(); eu poderia chamar diretamente o método do component, mas eu preferi neste caso
-    // fazer um código para chamar o botão, apenas a titulo de teste.
-
+  
     let btnTeste:DebugElement = fixture.debugElement.query(By.css('#btnSearch'));
     click(btnTeste.nativeElement);
 
-    tick();
+  
+
+  tick();
     fixture.detectChanges();
 
     let de:DebugElement = fixture.debugElement.query(By.css('#divError'));
-
-    expect(de.nativeElement.textContent).toBeTruthy();
-  }));
-
 
   it('should return a forecast result', fakeAsync( () => {
     const fixture = TestBed.createComponent(ForecastSearchComponent);
@@ -62,22 +60,16 @@ describe('AppComponent', () => {
     let spyForecast = spyOn(serviceForecast, 'request')
           .and.returnValue(Promise.resolve(Builder.getResult()));
 
-    app.search();
-
-    tick();
-
-    let de:DebugElement = fixture.debugElement.query(By.css('#columnResult'));
-
-    expect(de.nativeElement.textContent).toBeTruthy();
-    expect(app.searchFound).toBeTruthy();
-    expect(app.result.result).toBeTruthy();
-  }));
-
-
+		  
   function click(el: HTMLElement): void {
       el.click();
       console.log("cert");
   }
+
+    app.search();
+    expect(app.result.result).toBeTruthy();
+  }));
+
 
 
   class Builder{
