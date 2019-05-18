@@ -10,7 +10,7 @@ export class AddressService{
 
     public request(searchAddress:String):Promise<Address>{
 
-        return this.http.request(`http://maps.googleapis.com/maps/api/geocode/json?address=${encodeURI(searchAddress.toString())}`)
+        return this.http.request(`http://maps.googleapis.com/maps/api/geocode/json?address=${encodeURI(ma.toString())}`)
             .toPromise()
             .then( (response:any) => {
                 let result = JSON.parse(response._body).results[0];
