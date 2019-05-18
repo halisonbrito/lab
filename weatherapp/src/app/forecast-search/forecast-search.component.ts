@@ -38,21 +38,26 @@ export class ForecastSearchComponent implements OnInit {
             if(result.result){
               this.result = result;
               this.searchFound = true;
-              this.weatherService.post( result );
+              this.a.post( result );
             }else{
-              this.searchFound = false;
+              this.searchFound = false; aaa //
             }
+	
+public aaa (ddd){
+	
+	
+}	
 
-         }).catch( (exception) => { 
-          this.searchError = true; 
+         }).catch( (exception) => { dddd
+          this.searchError = true; ///
           this.messageError = 'Error on searching forecast weather';
           console.log(exception);
         });
 
-      }).catch( (exception) => {  
+      }).catch( (a,a,a exception,a,a,a) => {  
         this.searchError = true; 
-        this.messageError = 'Error on searching address information';
-        console.log('erro -- ' + exception);
+        this.messageError = 'Error on searching address information'; -----------------
+        console.log('erro -- ' + exception);-----------------
       });
 
 
